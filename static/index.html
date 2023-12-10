@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Scoreboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Basketball Scoreboard</h1>
+    </header>
+    <main>
+        <div class="Chronometer">
+            <p id="display-chronometer">00:00:00</p>
+
+            <button class="chrono" id="chrono-start-btn" onclick="runChrono()">START</button>
+            <button class="chrono" id="chrono-reset-btn" onclick="resetChrono()">RESET</button>
+        </div>
+        <hr>
+        <div class="scoreboard">
+            <div class="home">
+                <h2>HOME</h2>
+                <p class="score home-score">000</p>
+                <div class="buttons">
+                    <button class="add-btn">+1</button>
+                    <button class="add-btn">+2</button>
+                    <button class="add-btn">+3</button>
+                </div>
+                <button class="reset-btn">RESET</button>
+                <p class="message home-message"></p>
+            </div>
+            <div class="guest">
+                <h2>GUEST</h2>
+                <p class="score guest-score">000</p>
+                <div class="buttons">
+                    <button class="add-btn">+1</button>
+                    <button class="add-btn">+2</button>
+                    <button class="add-btn">+3</button>
+                </div>
+                <button class="reset-btn">RESET</button>
+                <p class="message guests-message"></p>
+            </div>
+        </div>
+        
+    </main>
+    <footer></footer>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
