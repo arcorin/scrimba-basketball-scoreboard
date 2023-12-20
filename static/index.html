@@ -5,44 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basketball Scoreboard</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" type="text/css" charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;600&family=Oxanium:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Basketball Scoreboard</h1>
-    </header>
+    <div class="title">
+        <h1>BASKETBALL SCOREBOARD</h1>
+    </div>
     <main>
-        <div class="Chronometer">
-            <p id="display-chronometer">00:00:00</p>
-
-            <button class="chrono" id="chrono-start-btn" onclick="runChrono()">START</button>
-            <button class="chrono" id="chrono-reset-btn" onclick="resetChrono()">RESET</button>
-        </div>
-        <hr>
         <div class="scoreboard">
-            <div class="home">
-                <h2>HOME</h2>
-                <p class="score home-score">000</p>
-                <div class="buttons">
-                    <button class="add-btn">+1</button>
-                    <button class="add-btn">+2</button>
-                    <button class="add-btn">+3</button>
+            <div class="chronometer">
+                <h2 class="chronometer-title">TIME</h2>
+                <p class="chronometer-display" id="chrono-display">00:00:00</p>
+                <div class="chronometer-buttons">
+                    <button class="chrono" id="chrono-start-btn" onclick="runChrono()">START</button>
+                    <button class="chrono" id="chrono-reset-btn" onclick="resetChrono()">RESET</button>
                 </div>
-                <button class="reset-btn">RESET</button>
-                <p class="message home-message"></p>
             </div>
-            <div class="guest">
-                <h2>GUEST</h2>
-                <p class="score guest-score">000</p>
-                <div class="buttons">
-                    <button class="add-btn">+1</button>
-                    <button class="add-btn">+2</button>
-                    <button class="add-btn">+3</button>
+            <div class="teams">
+                <div class="team home">
+                    <h2 class="team-title">HOME</h2>
+                    <p class="score home-score">000</p>
+                    <div class="buttons">
+                        <button class="add-btn">+1</button>
+                        <button class="add-btn">+2</button>
+                        <button class="add-btn">+3</button>
+                        <button class="reset-btn">RESET</button>
+                    </div>
+                    <p class="message home-message"></p>
                 </div>
-                <button class="reset-btn">RESET</button>
-                <p class="message guests-message"></p>
+                <div class="team guest">
+                    <h2 class="team-title">GUEST</h2>
+                    <p class="score guest-score">000</p>
+                    <div class="buttons">
+                        <button class="add-btn">+1</button>
+                        <button class="add-btn">+2</button>
+                        <button class="add-btn">+3</button>
+                        <button class="reset-btn">RESET</button>
+                    </div>
+                    <p class="message guest-message"></p>
+                </div>
             </div>
         </div>
-        
     </main>
     <footer></footer>
     <script type="text/javascript" src="index.js"></script>

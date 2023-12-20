@@ -18,7 +18,7 @@ function displayChrono(time) {
     let seconds = Math.floor((time / 1000) % 60).toString().padStart(2, "0");
     let minutes = Math.floor((time / (1000 * 60)) % 60).toString().padStart(2, "0");
     let hours = Math.floor((time / (1000 * 60 * 60)) % 24).toString().padStart(2, "0");
-    document.getElementById("display-chronometer").innerHTML = `${hours}:${minutes}:${seconds}`;
+    document.getElementById("chrono-display").innerHTML = `${hours}:${minutes}:${seconds}`;
 }
 
 // the time displayed by the chronometer after start = ... 
@@ -68,7 +68,7 @@ function resetChrono() {
     clearInterval(chronoIntervalID);
     savedElapsedTime = 0;
     newElapsedTime = 0;
-    document.getElementById("display-chronometer").innerHTML = "00:00:00";
+    document.getElementById("chrono-display").innerHTML = "00:00:00";
     document.getElementById("chrono-start-btn").innerHTML = "START";
 
 }
@@ -105,29 +105,30 @@ function addPoints(btn) {
     let parentName = parent.children[0].innerText;
 
     // get the time when the points are added
-    let displayTime = document.getElementById("display-chronometer").innerText.slice(3);
+    let displayTime = document.getElementById("chrono-display").innerText.slice(3);
 
-    // get the message paragraph
-    let message = parent.children[4];
+    // get the messages paragraph
+    let message = parent.children[3];
+    let len = message.children.length;
 
     // display a message with the number of points added and the team
-    message.innerHTML += `<p><span>${displayTime}</span>  ${btn.innerText} point${numToAdd == 1 ? "" : "s"} ${parentName} Team!</p>`;
+    message.innerHTML = `<p><span>${displayTime}</span>  ${btn.innerText} Point${numToAdd == 1 ? " " : "s"} ${parentName} Team!</p>` + message.innerHTML;
 
     // delete the first message of the list(array) of messages after 5s
     setTimeout(() => { 
-        if (message.children.length > 1) { message.children[0].remove() }
-     }, 5000);
+        if (len > 1) { message.children[len-1].remove() }
+     }, 10000);
 
     // delete the last message after 10 min
     setTimeout(() => { 
-        if (message.children.length > 0 ) { message.children[0].remove() } 
+        if (len > 0 ) { message.children[len-1].remove() } 
     }, 60000);
 }
 
 // function that resets the score corresponding to the button that was clicked (the argument of the function) 
 function reset(btn) {
-    btn.parentNode.children[1].innerHTML = "000";
-    btn.parentNode.children[4].innerHTML = "";
+    btn.parentNode.parentNode.children[1].innerHTML = "000";
+    btn.parentNode.parentNode.children[3].innerHTML = "";
 }
 
 // add an event listenter to addPoints() function for all the buttons that add points, from home and guest 
