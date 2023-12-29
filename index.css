@@ -19,7 +19,7 @@ button { color: #8e8e8a; background: #22222284;
     font-family: 'chivo_monomedium', Arial, Helvetica, sans-serif; }
 
 body { 
-    background: url("img/premium-freepik-basketball-hoop-colors-mod2.jpg"); background-size: cover; background-position: center top;
+    background: url(img/premium-freepik-basketball-hoop-colors-mod2.jpg); background-size: cover; background-position: center top;
     font-family: 'modern_led_board-7regular', Arial, Helvetica, sans-serif; color: white;
 }
 
@@ -40,8 +40,8 @@ main { display: flex; flex-direction: column; justify-content: space-around; ali
         .chronometer-buttons { display: flex; flex-direction: row; justify-content: center; gap: 2vw;
             @media(min-width: 1500px) { }
         }
-            .chrono { margin: 0; padding: 1px; background: #2222227d; width: calc(100vw / 4); font-size: clamp(1rem, 3.5vw, 6rem); 
-                @media(min-width: 450px) { width: calc(100vw / 8); }
+            .chrono-btn { margin: 0; padding: 1px; background: #2222227d; width: calc(100vw / 4); font-size: clamp(1rem, 3vw, 6rem); 
+                @media(min-width: 450px) { width: calc(100vw / 6); }
                 
             }
     
